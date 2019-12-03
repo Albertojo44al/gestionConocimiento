@@ -77,7 +77,7 @@ if (isset($_POST["btn1"]))
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="index.html">Home</a></li>
+                    <li><a href="index.html">Home</a></li>
                     <li><a href="#">About</a></li>
                     <li><a href="#">Projects</a></li>
                     <li><a href="#">Contact</a></li>
