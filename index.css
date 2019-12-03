@@ -1,0 +1,36 @@
+.contenedorc{
+    width: 100%;
+    height: 80%;
+}
+.carrusel{
+    width: 95%;
+    height: 100%;
+    margin: auto;
+    overflow: hidden;
+}
+.carrusel ul{
+    padding: 0;
+    height: 100%;
+    width: 500%;
+    justify-content: center;
+    display: flex;
+    animation: saltar 20s infinite;
+}
+.carrusel li{
+    width: 100%;
+    list-style-type: none;
+}
+.carrusel img{
+    width: 100%;
+    height: 100%;
+}
+@keyframes saltar{
+    0%{margin-left: -0%}
+    10%{margin-left: 0%}
+    20%{margin-left: -100%}
+    30%{margin-left: -100%}
+    40%{margin-left: -200%}
+    60%{margin-left: -200%}
+    80%{margin-left: -300%}
+    100%{margin-left: -300%}
+}
