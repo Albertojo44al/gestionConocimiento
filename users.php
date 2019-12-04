@@ -42,14 +42,15 @@
                     $rol = "Standar";
                 else if($row->CODIGO_ROL == 2)
                     $rol = "Content creator";
-                else
+                else if($row->CODIGO_ROL == 3)
                     $rol = "Administrator";
                 echo"<tr>
                      <td align=center> $row->USUARIO</td>
                      <td align=center> $row->NOMBRE_COMPLETO</td>
                      <td align=center> $rol </td>
-                     <td align=center><a href='eliminarUsuario.php?user=$row->USUARIO'>          Delete</a>| <a href='ascenderUsuario.php?user=$row->USUARIO&& prom=2'> Promotion</a> |
-                     <a href='ascenderUsuario.php?user=$row->USUARIO && prom=1'>Demotion</a></td>
+                     <td align=center><a href='eliminarUsuario.php?user=$row->USUARIO'>       Delete</a>
+                     <a href='ascenderUsuario.php?user=$row->USUARIO&& prom=2,rol=$row->CODIGO_ROL'> |Promotion</a>
+                     <a href='ascenderUsuario.php?user=$row->USUARIO && prom=1 && rol=$row->CODIGO_ROL'>|Demotion</a></td>
                      </tr>\n";
                 }
             }
