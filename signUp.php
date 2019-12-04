@@ -14,7 +14,7 @@ if (isset($_POST["btn1"]))
        $typeUser = $_POST['us'];
 
 
-        $sql= "INSERT INTO USUARIOS( USUARIO,CONTRASENA,NOMBRE_COMPLETO,CORREO_ELECTRONICO,CODIGO_ROL) VALUES('$usuario','$pass','$fullname','$email','$typeUser')";
+        $sql= "INSERT INTO USUARIOS( USUARIO,CONTRASENA,NOMBRE_COMPLETO,CORREO_ELECTRONICO,CODIGO_ROL,ACTIVO) VALUES('$usuario','$pass','$fullname','$email','$typeUser','A')";
         $insert = ibase_query($con,$sql);
         if(!insert){
             echo 'Usuario ya existente';
@@ -83,7 +83,7 @@ if (isset($_POST["btn1"]))
                     <li><a href="#">Contact</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                    <li><a href=""><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
                     <li><a href="signUp.php"><span class="glyphicon glyphicon-user"></span> Sign up</a></li>
                 </ul>
             </div>
