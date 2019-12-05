@@ -1,6 +1,7 @@
 <!DOCTYPE>
 <?
 include ('conexion.php');
+include ('navbarInicio.php');
 
 if (isset($_POST["btn1"]))
 {
@@ -13,51 +14,34 @@ if (isset($_POST["btn1"]))
        $email = $_POST['email'];
        $typeUser = $_POST['us'];
 
+        $verificar= "SELECT USUARIO FROM USUARIOS WHERE USUARIO='$usuario'";
+        $insertVerificar = ibase_query($con,$verificar);
 
-        $sql= "INSERT INTO USUARIOS( USUARIO,CONTRASENA,NOMBRE_COMPLETO,CORREO_ELECTRONICO,CODIGO_ROL,ACTIVO) VALUES('$usuario','$pass','$fullname','$email','$typeUser','A')";
-        $insert = ibase_query($con,$sql);
-        if(!insert){
-            echo 'Usuario ya existente';
-            exit;
+        if(!$row=ibase_fetch_object($insertVerificar)){
+
+            $sql= "INSERT INTO USUARIOS( USUARIO,CONTRASENA,NOMBRE_COMPLETO,CORREO_ELECTRONICO,CODIGO_ROL,ACTIVO) VALUES('$usuario','$pass','$fullname','$email','$typeUser','A')";
+            $insert = ibase_query($con,$sql);
+            if(!insert){
+                echo '';
+                exit;
+            }
+
+            echo "<script> alert('User created successfully!!'); </script>";
+            echo '
+            <script type="text/javascript">
+            window.location.href="index.html";
+            </script>';
         }
-        echo "<script> alert('Usuario creado exitosamente!!'); </script>";
-        ?>
-		<script type="text/javascript">
-		window.location.href="index.html";
-		</script>
-		<?
+         else{
+            echo "<script> alert('User $row->USUARIO already used!'); </script>";
+        }
+
     }
 
 }
 ?>
 
 <html>
-
-<style>
-
-	body{
-		font-family:"Segoe UI";
-		font-size:32px;
-	}
-
-	#tabla
-	{
-		font-size: 20px;
-	}
-
-	#crear{
-		background-color:#2CB1C3;
-		border:0em;
-		border-radius:0.7em;
-		color:#FFF;
-		cursor:pointer;
-		font-family: "Arial";
-		font-weight: bold;
-		padding:0.5em;
-		width:20em;
-
-	}
-</style>
 
 <head>
 	<title>Nuevo Usuario</title>
@@ -69,28 +53,7 @@ if (isset($_POST["btn1"]))
 </head>
 
 <body>
-
-    <nav class="navbar navbar-inverse">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <a class="navbar-brand"><img src="imagenes/logo.png" width="25px" height="100%"></a>
-            </div>
-            <div class="collapse navbar-collapse" id="myNavbar">
-                <ul class="nav navbar-nav">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Projects</a></li>
-                    <li><a href="#">Contact</a></li>
-                </ul>
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href=""><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-                    <li><a href="signUp.php"><span class="glyphicon glyphicon-user"></span> Sign up</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-
+<link rel="stylesheet" href="signUp.css">
 <center>
     <br><br>
     <h2>REGISTRAR NUEVO USUARIO  <img src="imagenes/logoB.png" width="5%" height="7%">
@@ -98,6 +61,7 @@ if (isset($_POST["btn1"]))
 
 	<form name="fe" action="" method="POST">
                 <table id='tabla' cellpadding=7>
+                     <div class="form-label-group">
                 <tr>
                     <td align="center"><b>Username:  </b></td><td><label><input name="user" type="text" size=35 style="font-size:18px" required autofocus/></label></td>
                 </tr>
@@ -108,8 +72,9 @@ if (isset($_POST["btn1"]))
 				    <td align="center"><b>Password:  </b></td><td><label><input name="pass" type="password" size=35 style="font-size:18px" required autofocus/></label></td>
                 </tr>
                 <tr>
-				    <td align="center"><b>E-mail:  </b></td><td><label><input name="email" type="text" size=35 style="font-size:18px" required autofocus/></label></td>
+				    <td align="center"><b>E-mail:  </b></td><td><label><input name="email" type="email" size=35 style="font-size:18px" required autofocus/></label></td>
                 </tr>
+                    </div>
                 <tr>
                     <td align="center"><b>User: </b></td>
 
@@ -117,7 +82,6 @@ if (isset($_POST["btn1"]))
                     <td algn="center">
                     <input type="radio" name="us" value="1"><label>Standar</label><br>
 				    <input type="radio" name="us" value="2" > <label>Content Creator</label><br>
-                    <input type="radio" name="us" value="3" ><label>Administrator</label><br>
                     </td>
 
                  </tr>

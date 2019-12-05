@@ -5,6 +5,15 @@
 ?>
 
 <html lang="es">
+    <style>
+        a{
+            color: black;
+
+        }
+
+
+
+    </style>
     <head>
     <title> Users</title>
     </head>

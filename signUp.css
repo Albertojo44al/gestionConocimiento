@@ -1,0 +1,46 @@
+ input[type=text] {
+
+        border-radius: 2em;
+        border: 1px solid gray;
+        height: auto;
+
+    }
+      input[type=password] {
+
+        border-radius: 2em;
+        border: 1px solid gray;
+        height: auto;
+    }
+      input[type=email] {
+
+        border-radius: 2em;
+        border: 1px solid gray;
+        height: auto;
+    }
+h2{
+
+}
+  	#tabla
+	{
+		font-size: 20px;
+
+	}
+    #tabla.tr{
+         margin-bottom: 3rem;
+    }
+
+	#crear{
+		background-color:#2CB1C3;
+		border:0em;
+		border-radius:0.7em;
+		color:#FFF;
+		cursor:pointer;
+		font-family: "Arial";
+		font-weight: bold;
+		padding:0.5em;
+		width:20em;
+	}
+    #crear:hover{
+         background-color:#05787C;
+         box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    }

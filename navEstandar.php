@@ -15,13 +15,11 @@
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav">
-                    <li><a href="cursos.php">Courses</a></li>
-                    <li><a href="#">Create</a></li>
+                    <li><a href="cursos.php?nav=1">Courses</a></li>
                     <li><a href="#">Categories</a></li>
-                    <li><a href="users.php">Users</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="index.html"><span class="glyphicon glyphicon-log-in"></span> Log out</a></li>
+                    <li><a href="index.html"><span class="glyphicon glyphicon-log-out"></span> Log out</a></li>
                 </ul>
             </div>
         </div>
