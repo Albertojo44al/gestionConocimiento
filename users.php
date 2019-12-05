@@ -49,7 +49,7 @@
                      <td align=center> $row->NOMBRE_COMPLETO</td>
                      <td align=center> $rol </td>
                      <td align=center><a href='eliminarUsuario.php?user=$row->USUARIO'>       Delete</a>
-                     <a href='ascenderUsuario.php?user=$row->USUARIO&& prom=2,rol=$row->CODIGO_ROL'> |Promotion</a>
+                     <a href='ascenderUsuario.php?user=$row->USUARIO&& prom=2 && rol=$row->CODIGO_ROL'> |Promotion</a>
                      <a href='ascenderUsuario.php?user=$row->USUARIO && prom=1 && rol=$row->CODIGO_ROL'>|Demotion</a></td>
                      </tr>\n";
                 }
