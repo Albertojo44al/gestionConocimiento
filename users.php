@@ -7,8 +7,14 @@
 <html lang="es">
     <style>
         a{
-            color: black;
-
+        color: black;
+            text-decoration: none;
+            color: #05787C
+        }
+        a:hover, a:active {
+            background-color:#05787C;
+            color: white;
+            text-decoration: none;
         }
 
 

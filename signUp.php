@@ -55,29 +55,34 @@ if (isset($_POST["btn1"]))
 <body>
 <link rel="stylesheet" href="signUp.css">
 <center>
-    <br><br>
+    <br><br><br><br>
+
     <h2>REGISTRAR NUEVO USUARIO  <img src="imagenes/logoB.png" width="5%" height="7%">
 	<hr width=50%></h2>
-
+     <div class="contenedor">
 	<form name="fe" action="" method="POST">
                 <table id='tabla' cellpadding=7>
                      <div class="form-label-group">
+                 <tr> <td><label >Username</label></td> </tr>
                 <tr>
-                    <td align="center"><b>Username:  </b></td><td><label><input name="user" type="text" size=35 style="font-size:18px" required autofocus/></label></td>
+                   <td><label><input name="user" type="text" size=35 style="font-size:18px" required autofocus/></label></td>
                 </tr>
+                <tr><td> <label>Full name</label></td> </tr>
                 <tr>
-				    <td align="center"><b>Full name:  </b></td><td><label><input name="name" type="text" size=35 style="font-size:18px" required autofocus/></label></td>
+				   <td><label><input name="name" type="text" size=35 style="font-size:18px" required autofocus/></label></td>
                 </tr>
+                <tr><td> <label>Password</label> </td></tr>
                 <tr>
-				    <td align="center"><b>Password:  </b></td><td><label><input name="pass" type="password" size=35 style="font-size:18px" required autofocus/></label></td>
+				    <td><label><input name="pass" type="password" size=35 style="font-size:18px" required autofocus/></label></td>
                 </tr>
+                         <tr> <td><label>E-mail</label> </td></tr>
                 <tr>
-				    <td align="center"><b>E-mail:  </b></td><td><label><input name="email" type="email" size=35 style="font-size:18px" required autofocus/></label></td>
+                     <td><label><input name="email" type="email" size=35 style="font-size:18px" required autofocus/></label></td>
                 </tr>
                     </div>
                 <tr>
-                    <td align="center"><b>User: </b></td>
-
+                    <td> <label>Users</label> </td></tr>
+                <tr>
 
                     <td algn="center">
                     <input type="radio" name="us" value="1"><label>Standar</label><br>
@@ -87,6 +92,7 @@ if (isset($_POST["btn1"]))
                  </tr>
 
                 </table>
+
         <br>
         <br>
 
@@ -94,6 +100,7 @@ if (isset($_POST["btn1"]))
 
 
 </form>
+</div>
 
 </center>
 </body>

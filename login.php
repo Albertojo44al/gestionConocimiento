@@ -46,18 +46,23 @@ if (isset($_POST["btn1"]))
 <body>
 <link rel="stylesheet" href="signUp.css">
 <center>
-    <br><br>
+    <br><br><br><br>
     <h2>LOG IN  <img src="imagenes/logoB.png" width="5%" height="7%">
 	<hr width=50%></h2>
-
+     <div class="contenedor">
 	<form name="fe" action="" method="POST">
                 <table id='tabla' cellpadding=7>
                 <tr>
-                    <td align="center"><b>Username:  </b></td><td><label><input name="user" type="text" size=35 style="font-size:18px" required autofocus/></label></td>
+                    <td><label>Username</label></td>
                 </tr>
-
                 <tr>
-				    <td align="center"><b>Password:  </b></td><td><label><input name="pass" type="password" size=35 style="font-size:18px" required autofocus/></label></td>
+                    <td><label><input name="user" type="text" size=35 style="font-size:18px" required autofocus/></label></td>
+                </tr>
+                <tr>
+                    <td><label>Pasword</label></td>
+                </tr>
+                <tr>
+				    <td><label><input name="pass" type="password" size=35 style="font-size:18px" required autofocus/></label></td>
                 </tr>
 
 
@@ -70,7 +75,7 @@ if (isset($_POST["btn1"]))
 
 
 </form>
-
+    </div>
 </center>
 </body>
 
