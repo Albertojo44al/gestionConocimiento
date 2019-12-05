@@ -6,17 +6,39 @@
 
 <html lang="es">
     <style>
-        a{
-        color: black;
-            text-decoration: none;
-            color: #05787C
+        hr{
+             border-width:3px;
+
         }
-        a:hover, a:active {
+        .el a{
+            text-decoration: none;
+            color: darkred;
+        }
+        .el a:hover{
+            text-decoration: none;
+            color:white;
+            background: darkred;
+            padding: 10px 12px;
+            border-radius: 5px;
+        }
+        .btn a{
+            text-decoration: none;
+            color:#05787C;
+        }
+
+        .btn a:hover {
             background-color:#05787C;
             color: white;
             text-decoration: none;
+            padding: 10px 0px;
+            border-radius: 5px;
         }
-
+        #tabla{
+             border-spacing: 5px;
+            border-collapse: separate;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
 
 
     </style>
@@ -37,7 +59,7 @@
                 echo 'Error !!';
                 exit;
             }
-            echo "<table border=1 rules=none width=60% cellpadding=5px id=tabla>\n";
+            echo "<table rules=none width=60% cellpadding=5px id=tabla>\n";
             echo "
                     <tr>
                     <td align=center><b>USERNAME</b></td>
@@ -63,9 +85,11 @@
                      <td align=center> $row->USUARIO</td>
                      <td align=center> $row->NOMBRE_COMPLETO</td>
                      <td align=center> $rol </td>
-                     <td align=center><a href='eliminarUsuario.php?user=$row->USUARIO'>       Delete</a>
-                     <a href='ascenderUsuario.php?user=$row->USUARIO&& prom=2 && rol=$row->CODIGO_ROL'> |Promotion</a>
-                     <a href='ascenderUsuario.php?user=$row->USUARIO && prom=1 && rol=$row->CODIGO_ROL'>|Demotion</a></td>
+                     <td align=center><div class='el'><a href='eliminarUsuario.php?user=$row->USUARIO'>   Delete</a></div>
+
+                      <div class='btn'><a href='ascenderUsuario.php?user=$row->USUARIO&& prom=2 && rol=$row->CODIGO_ROL'>      Promotion</a></div>
+                     <div class='btn'><a href='ascenderUsuario.php?user=$row->USUARIO && prom=1 && rol=$row->CODIGO_ROL'>       Demotion</a> </div></td>
+
                      </tr>\n";
                 }
             }

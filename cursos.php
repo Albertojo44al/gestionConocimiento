@@ -24,10 +24,20 @@ include('navAdministrador.php');
     grid-column-gap: 10%;
 
     }
+    .d1 a{
+        text-decoration: none;
+        color:#05787C;
+    }
+    .d1{
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+    .d1:hover, a:hover {
+        background-color:#2CB1C3;
+        color: white;
+    }
     .d1 img{
     width: 100%;
-    height: 100%;
-    border-radius: 2em;
+    height: 90%;
     }
     </style>
 
@@ -42,12 +52,12 @@ include('navAdministrador.php');
         <hr width=50%>
         <br><br><br><br>
      <div class="contenedor">
-    <div class="d1"><a href=""><img src="imagenes/image4.jpg">Curso 1</a></div>
-    <div class="d1"><a href=""><img src="imagenes/image2.jpg">Curso 2</a></div>
-    <div class="d1"><a href=""><img src="imagenes/image3.jpg">Curso 3</a></div>
-    <div class="d1"><a href=""><img src="imagenes/image1.jpg">Curso 4</a></div>
-    <div class="d1"><a href=""><img src="imagenes/image5.jpg">Curso 5</a></div>
-    <div class="d1"><a href=""><img src="imagenes/image5.jpg">Curso 6</a></div>
+    <div class="d1"><a href=""><img src="imagenes/image4.jpg"><p>Curso 1</p></a></div>
+    <div class="d1"><a href=""><img src="imagenes/image2.jpg"><p>Curso 2</p></a></div>
+    <div class="d1"><a href=""><img src="imagenes/image3.jpg"><p>Curso 3</p></a></div>
+    <div class="d1"><a href=""><img src="imagenes/image1.jpg"><p>Curso 4</p></a></div>
+    <div class="d1"><a href=""><img src="imagenes/image5.jpg"><p>Curso 5</p></a></div>
+    <div class="d1"><a href=""><img src="imagenes/image5.jpg"><p>Curso 6</p></a></div>
     </div>
     <br><br>
     </Body>
