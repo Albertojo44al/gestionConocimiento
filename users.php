@@ -1,6 +1,33 @@
-<? include('navAdministrador.php');
+<?
    include('conexion.php');
+   include('bootstrap.php');
+$nav = $_GET['nav'];
+$user = $_GET['user'];
 
+    echo "
+<body>
+<link rel='stylesheet' href='index.css'>
+    <nav class='navbar navbar-fixed-top navbar-inverse'>
+        <div class='container-fluid'>
+            <div class='navbar-header'>
+                <a class='navbar-brand'><img src='imagenes/logo.png' width='25px' height='100%'></a>
+            </div>
+            <div class='collapse navbar-collapse' id='myNavbar'>
+                <ul class='nav navbar-nav'>
+                    <li><a href='cursos.php?nav=3&&user=$user'>Courses</a></li>
+                    <li><a href='#?nav=3&&user=$user'>Categories</a></li>
+                    <li><a href='#?nav=3&&user=$user'>Create</a></li>
+                    <li><a href='#?nav=3&&user=$user'>My courses</a></li>
+                    <li class='active'><a href='users.php?nav=3&&user=$user'>Users</a></li>
+                    </ul>
+                <ul class='nav navbar-nav navbar-right'>
+                    <li><a href='perfil.php?user=$user&&nav=3'><span class='glyphicon glyphicon-user'></span> Profile</a></li>
+                    <li><a href='index.html'><span class='glyphicon glyphicon-log-in'></span> Log out</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <center>";
 
 ?>
 
@@ -85,10 +112,10 @@
                      <td align=center> $row->USUARIO</td>
                      <td align=center> $row->NOMBRE_COMPLETO</td>
                      <td align=center> $rol </td>
-                     <td align=center><div class='el'><a href='eliminarUsuario.php?user=$row->USUARIO'>   Delete</a></div>
+                     <td align=center><div class='el'><a href='eliminarUsuario.php?user=$user&&usern=$row->USUARIO'>   Delete</a></div>
 
-                      <div class='btn'><a href='ascenderUsuario.php?user=$row->USUARIO&& prom=2 && rol=$row->CODIGO_ROL'>      Promotion</a></div>
-                     <div class='btn'><a href='ascenderUsuario.php?user=$row->USUARIO && prom=1 && rol=$row->CODIGO_ROL'>       Demotion</a> </div></td>
+                      <div class='btn'><a href='ascenderUsuario.php?user=$user&&usern=$row->USUARIO&& prom=2 && rol=$row->CODIGO_ROL'>      Promotion</a></div>
+                     <div class='btn'><a href='ascenderUsuario.php?user=$user&& usern=$row->USUARIO && prom=1 && rol=$row->CODIGO_ROL'>       Demotion</a> </div></td>
 
                      </tr>\n";
                 }

@@ -17,9 +17,8 @@ if (isset($_POST["btn1"]))
     $insert = ibase_query($con,$sql);
 
     if($row=ibase_fetch_object($insert)){
-        echo "<script> alert('WELCOME BACK! $row->NOMBRE_COMPLETO'); </script>";
         echo "<script type='text/javascript'>
-		window.location.href='cursos.php?nav=$row->CODIGO_ROL';
+		window.location.href='cursos.php?nav=$row->CODIGO_ROL && user=$usuario';
 		</script>";
 
     }
@@ -36,11 +35,7 @@ if (isset($_POST["btn1"]))
 
 <head>
 	<title>LOG IN</title>
-     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
 </head>
 
 <body>

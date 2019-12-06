@@ -43,14 +43,7 @@ if (isset($_POST["btn1"]))
 
 <html>
 
-<head>
-	<title>Nuevo Usuario</title>
-     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-</head>
+<title>Nuevo Usuario</title>
 
 <body>
 <link rel="stylesheet" href="signUp.css">
@@ -63,33 +56,29 @@ if (isset($_POST["btn1"]))
 	<form name="fe" action="" method="POST">
                 <table id='tabla' cellpadding=7>
                      <div class="form-label-group">
-                 <tr> <td><label >Username</label></td> </tr>
+                 <tr>
+                   <td><label >Username</label></td> </tr>
                 <tr>
-                   <td><label><input name="user" type="text" size=35 style="font-size:18px" required autofocus/></label></td>
-                </tr>
-                <tr><td> <label>Full name</label></td> </tr>
+                   <td><label><input name="user" type="text" size=35 style="font-size:18px" required autofocus/></label></td></tr>
                 <tr>
-				   <td><label><input name="name" type="text" size=35 style="font-size:18px" required autofocus/></label></td>
-                </tr>
-                <tr><td> <label>Password</label> </td></tr>
+                   <td> <label>Full name</label></td> </tr>
                 <tr>
-				    <td><label><input name="pass" type="password" size=35 style="font-size:18px" required autofocus/></label></td>
-                </tr>
-                         <tr> <td><label>E-mail</label> </td></tr>
+				   <td><label><input name="name" type="text" size=35 style="font-size:18px" required autofocus/></label></td></tr>
                 <tr>
-                     <td><label><input name="email" type="email" size=35 style="font-size:18px" required autofocus/></label></td>
-                </tr>
+                    <td> <label>Password</label> </td></tr>
+                <tr>
+				    <td><label><input name="pass" type="password" size=35 style="font-size:18px" required autofocus/></label></td></tr>
+                <tr>
+                    <td><label>E-mail</label> </td></tr>
+                <tr>
+                    <td><label><input name="email" type="email" size=35 style="font-size:18px" required autofocus/></label></td></tr>
                     </div>
                 <tr>
                     <td> <label>Users</label> </td></tr>
                 <tr>
-
                     <td algn="center">
-                    <input type="radio" name="us" value="1"><label>Standar</label><br>
-				    <input type="radio" name="us" value="2" > <label>Content Creator</label><br>
-                    </td>
-
-                 </tr>
+                    <input type="radio" name="us" value="1"> <label>Standar</label><br>
+				    <input type="radio" name="us" value="2" > <label>Content Creator </label><br></td></tr>
 
                 </table>
 
