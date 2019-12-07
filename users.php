@@ -16,7 +16,7 @@ $user = $_GET['user'];
                 <ul class='nav navbar-nav'>
                     <li><a href='cursos.php?nav=3&&user=$user'>Courses</a></li>
                     <li><a href='#?nav=3&&user=$user'>Categories</a></li>
-                    <li><a href='#?nav=3&&user=$user'>Create</a></li>
+                    <li><a href='crear.php?nav=3&&user=$user'>Create</a></li>
                     <li><a href='#?nav=3&&user=$user'>My courses</a></li>
                     <li class='active'><a href='users.php?nav=3&&user=$user'>Users</a></li>
                     </ul>

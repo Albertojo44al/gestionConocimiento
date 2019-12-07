@@ -16,7 +16,7 @@ $user = $_GET['user'];
                     <li class='active'><a href='cursos.php?nav=$nav&&user=$user'>Courses</a></li>
                     <li><a href='#?nav=$nav&&user=$user'>Categories</a></li>";
                 if($nav==2 || $nav==3){
-                 echo " <li><a href='#?nav=$nav&&user=$user'>Create</a></li>
+                 echo " <li><a href='crear.php?nav=$nav&&user=$user'>Create</a></li>
                         <li><a href='#?nav=$nav&&user=$user'>My courses</a></li>";
                     if($nav==3){
                     echo "<li><a href='users.php?nav=$nav&&user=$user'>Users</a></li>";
@@ -35,33 +35,6 @@ $user = $_GET['user'];
 ?>
 
 <html>
-<style>
-    .contenedor{
-    grid-template-columns: auto auto auto;
-    width: 80%;
-    height: 80%;
-    justify-content:space-between;
-    display:grid;
-    grid-row-gap: 10%;
-    grid-column-gap: 10%;
-
-    }
-    .d1 a{
-        text-decoration: none;
-        color:#05787C;
-    }
-    .d1{
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    }
-    .d1:hover, a:hover {
-        background-color:#2CB1C3;
-        color: white;
-    }
-    .d1 img{
-    width: 100%;
-    height: 90%;
-    }
-    </style>
 
 <head>
     <title>
@@ -69,6 +42,7 @@ $user = $_GET['user'];
     </title>
 </head>
     <Body>
+        <link rel="stylesheet" href="cursos.css">
         <br><br><br><br>
          <h1><b>Current Courses</b></h1>
         <hr width=50%>

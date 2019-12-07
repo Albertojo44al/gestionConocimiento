@@ -9,25 +9,25 @@ if (isset($_POST["btn1"]))
     $btn=$_POST["btn1"];
     if($btn == "LOG IN")
     {
-       $usuario=$_POST['user'];
-       $pass= $_POST['pass'];
+        $usuario=$_POST['user'];
+        $pass= $_POST['pass'];
 
 
-    $sql= "SELECT NOMBRE_COMPLETO,CODIGO_ROL FROM USUARIOS WHERE USUARIO='$usuario' AND CONTRASENA='$pass'AND ACTIVO='A'";
-    $insert = ibase_query($con,$sql);
+        $sql= "SELECT NOMBRE_COMPLETO,CODIGO_ROL FROM USUARIOS WHERE USUARIO='$usuario' AND CONTRASENA='$pass'AND ACTIVO='A'";
+        $insert = ibase_query($con,$sql);
 
-    if($row=ibase_fetch_object($insert)){
-        echo "<script type='text/javascript'>
-		window.location.href='cursos.php?nav=$row->CODIGO_ROL && user=$usuario';
-		</script>";
+        if($row=ibase_fetch_object($insert)){
+            echo "<script type='text/javascript'>
+            window.location.href='cursos.php?nav=$row->CODIGO_ROL && user=$usuario';
+            </script>";
+
+        }
+        else{
+             echo "<script> alert('INVALID USER/PASSWORD!'); </script>";
+        }
+
 
     }
-    else{
-         echo "<script> alert('INVALID USER/PASSWORD!'); </script>";
-    }
-
-
-}
 }
 ?>
 

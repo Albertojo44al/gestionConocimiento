@@ -17,7 +17,7 @@ $user = $_GET['user'];
                     <li><a href='cursos.php?nav=$nav&&user=$user'>Courses</a></li>
                     <li><a href='#?nav=$nav&&user=$user'>Categories</a></li>";
                 if($nav==2 || $nav==3){
-                 echo " <li><a href='#?nav=$nav&&user=$user'>Create</a></li>
+                 echo " <li><a href='create.php?nav=$nav&&user=$user'>Create</a></li>
                         <li><a href='#?nav=$nav&&user=$user'>My courses</a></li>";
                     if($nav==3){
                     echo "<li><a href='users.php?nav=$nav&&user=$user'>Users</a></li>";
@@ -80,11 +80,12 @@ echo "<body>
     width: 100%;
     height: 100%;
     border-radius: 100em;
-        padding: 10%;
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding: 10%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background-color:#2CB1C3;
 }
     .espacio{
-    width: 15%;
+    width: 10%;
 }
     .texto{
     border-radius: 100%;

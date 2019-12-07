@@ -54,7 +54,7 @@ if (isset($_POST["btn1"]))
 	<hr width=50%></h2>
      <div class="contenedor">
 	<form name="fe" action="" method="POST">
-                <table id='tabla' cellpadding=7>
+                <table id='tabla'>
                      <div class="form-label-group">
                  <tr>
                    <td><label >Username</label></td> </tr>
@@ -77,8 +77,8 @@ if (isset($_POST["btn1"]))
                     <td> <label>Users</label> </td></tr>
                 <tr>
                     <td algn="center">
-                    <input type="radio" name="us" value="1"> <label>Standar</label><br>
-				    <input type="radio" name="us" value="2" > <label>Content Creator </label><br></td></tr>
+                    <input type="radio" name="us" value="1" required autofocus> <label>Standar</label><br>
+				    <input type="radio" name="us" value="2" required autofocus > <label>Content Creator </label><br></td></tr>
 
                 </table>
 
