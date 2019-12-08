@@ -36,7 +36,19 @@ $user = $_GET['user'];
             $cat = $_POST['category'];
             $name = $_POST['name'];
                  echo "<script type='text/javascript'>
-            window.location.href='cursos.php?nav=$nav&&user=$user&&category=$cat&&name=$name';
+            window.location.href='datosCurso.php?nav=$nav&&user=$user&&category=$cat&&name=$name&&plantilla=1';
+            </script>";
+    }else if(isset($_POST["t2"])){
+            $cat = $_POST['category'];
+            $name = $_POST['name'];
+                 echo "<script type='text/javascript'>
+            window.location.href='datosCurso.php?nav=$nav&&user=$user&&category=$cat&&name=$name&&plantilla=2';
+            </script>";
+    }else if(isset($_POST["t3"])){
+            $cat = $_POST['category'];
+            $name = $_POST['name'];
+                 echo "<script type='text/javascript'>
+            window.location.href='datosCurso.php?nav=$nav&&user=$user&&category=$cat&&name=$name&&plantilla=3';
             </script>";
     }
 
