@@ -31,3 +31,17 @@ $user = $_GET['user'];
         </div>
     </nav>";
 ?>
+
+<html>
+<head>
+    <title>
+    </title>
+</head>
+    <body>
+    <div class="contenedorp1">
+        <h1>
+
+        </h1>
+    </div>
+    </body>
+</html>

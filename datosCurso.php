@@ -1,10 +1,13 @@
 <?
 include ('conexion.php');
 include('bootstrap.php');
+
+//extrae los datos enviados de la pagina anterior
 $nav = $_GET['nav'];
 $user = $_GET['user'];
 $category= $_GET['category'];
 $name = $_GET['name'];
+$temp = $_GET['plantilla'];
  echo "
 <body>
 <link rel='stylesheet' href='index.css'>
@@ -34,6 +37,7 @@ $name = $_GET['name'];
     </nav>";
 
 
+
 if(isset($_POST['enviar'])){
     $title = $_POST['title'];
     $subtema = $_POST['subtema'];
@@ -43,22 +47,52 @@ if(isset($_POST['enviar'])){
     $color= $_POST['color'];
 
 
-$codigo = intval( "0" . rand(1,9) . rand(0,9) . rand(0,9) . rand(0,9) . rand(0,9) );
+    $codigo = intval( "0" . rand(1,9) . rand(0,9) . rand(0,9) . rand(0,9) . rand(0,9) );
 
 
+    //insertar datos en la tabala de cursos
+    $sqlCursos = "INSERT INTO CURSOS (CODIGO, FECHA_CREACION,CODIGO_CATEGORIAS,ACTIVO,NOMBRE_CURSO) VALUES ($codigo,CURRENT_DATE,$category,'A','$name');";
+    $queryCursos = ibase_query($con,$sqlCursos);
+     if(!$queryCursos){
+        echo "<script> alert('error'); </script>";
+        exit;
+    }
+    //insertar datos en la tabla cursos_x_usuarios
+    $sqlCxU = "INSERT INTO CURSOS_X_USUARIOS(USUARIO,CODIGO) VALUES ('$user',$codigo);";
+    $queryCxU = ibase_query($con,$sqlCxU);
+    if(!$queryCursos){
+        echo "<script> alert('error'); </script>";
+        exit;
+    }
 
-    $sql = "INSERT INTO CURSOS (CODIGO, FECHA_CREACION,CODIGO_CATEGORIAS,ACTIVO,NOMBRE_CURSO) VALUES ($codigo,CURRENT_DATE,$category,'A','$name');";
-    $query = ibase_query($con,$sql);
-     if(!query){
+    //insertar datos en la tabla contenido
+    $codigoContenido = intval( "0" . rand(1,9) . rand(0,9) . rand(0,9) . rand(0,9) . rand(0,9) );
+
+
+    $sqlContenido = "INSERT INTO CONTENIDO (CODIGO_CONTENIDO,CODIGO_CURSOS, PLANTILLA) VALUES ($codigoContenido,$codigo,3);";
+    $queryContenido = ibase_query($con,$sqlContenido);
+      if(!$queryContenido){
         echo "<script> alert('error'); </script>";
         exit;
     }
 
 
-    echo '
-    <script type="text/javascript">
-    window.location.href="index.html";
-    </script>';
+        //envia los datos extraidos a la plantilla
+    if($temp ==1){
+        echo '
+        <script type="text/javascript">
+        window.location.href="plantilla1.php";
+        </script>';
+    }
+    else  if($temp ==2){
+        echo '<script type="text/javascript">
+        window.location.href="plantilla2.php";
+        </script>';
+    }else{
+        echo '<script type="text/javascript">
+        window.location.href="plantilla3.php";
+        </script>';
+    }
 
 }
 
