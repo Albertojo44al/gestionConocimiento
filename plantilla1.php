@@ -1,47 +1,82 @@
 <?
 include ('conexion.php');
 include('bootstrap.php');
+include('navBarPlantillas.php');
 $nav = $_GET['nav'];
 $user = $_GET['user'];
- echo "
-<body>
-<link rel='stylesheet' href='index.css'>
-    <nav class='navbar navbar-fixed-top navbar-inverse'>
-        <div class='container-fluid'>
-            <div class='navbar-header'>
-                <a class='navbar-brand'><img src='imagenes/logo.png' width='25px' height='100%'></a>
-            </div>
-            <div class='collapse navbar-collapse' id='myNavbar'>
-                <ul class='nav navbar-nav'>
-                    <li><a href='cursos.php?nav=$nav&&user=$user'>Courses</a></li>
-                    <li><a href='#?nav=$nav&&user=$user'>Categories</a></li>";
-                if($nav==2 || $nav==3){
-                 echo " <li class='active'><a href='crear.php?nav=$nav&&user=$user'>Create</a></li>
-                        <li><a href='#?nav=$nav&&user=$user'>My courses</a></li>";
-                    if($nav==3){
-                    echo "<li><a href='users.php?nav=$nav&&user=$user'>Users</a></li>";
-                    }
-                }
-             echo " </ul>
-                <ul class='nav navbar-nav navbar-right'>
-                    <li><a href='perfil.php?nav=$nav&&user=$user'><span class='glyphicon glyphicon-user'></span> Profile</a></li>
-                    <li><a href='index.html'><span class='glyphicon glyphicon-log-in'></span> Log out</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>";
-?>
+$color = $_GET['color'];
 
+
+
+
+$codigoCurso = $_GET['codigo'];
+
+$sql = "SELECT SUBTEMA,INFORMACION, NOMBRE_CURSO, TITULO FROM CURSOS C inner join CONTENIDO CON ON CON.CODIGO_CURSOS=C.CODIGO INNER JOIN SUBTEMAS SUB ON
+SUB.CODIGO_CONTENIDO = CON.CODIGO_CONTENIDO WHERE C.CODIGO = $codigoCurso;";
+$query = ibase_query($con,$sql);
+
+$contador = 0;
+while($row = ibase_fetch_object($query)){
+    $contador++;
+    $nombre = $row->NOMBRE_CURSO;
+    $title = $row->TITULO;
+    if($contador ==1){
+    $subtema = $row->SUBTEMA;
+    $info = $row->INFORMACION;
+    }else{
+    $subtema2 = $row->SUBTEMA;
+    $info2 = $row->INFORMACION;
+    }
+
+}
+
+
+echo "
 <html>
 <head>
     <title>
+    $nombre
     </title>
 </head>
-    <body>
-    <div class="contenedorp1">
-        <h1>
+    <body style='background-color:#2cb1c3''><br><br><br>
 
-        </h1>
-    </div>
+        <center>
+        <h1><b>$title</b></h1>
+        <hr width=50%>
+        <div class='contenedorp1'>
+        <div class='sub1p1'>
+            <h2>
+            $subtema
+            </h2><br>
+            <p>$info</p>
+            </div>
+        <div class='sub1p1'>
+             <h2>
+             $subtema2
+            </h2><br>
+            <p>$info2</p>
+            </div>
+        </div>
+        </center>
     </body>
-</html>
+</html>";
+#?nav=3%20&&user=admin&&codigo=73969&&color=#2cb1c3
+?>
+
+    <style>
+    .contenedorp1{
+    background-color: #f2f2f2;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    grid-template-columns: auto auto;
+    width: 80%;
+    height: 80%;
+    display:grid;
+    padding: 5%;
+}
+    .sub1p1{
+    border-radius: 5em;
+    height:80%;
+    width:90%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+    </style>

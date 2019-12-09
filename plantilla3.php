@@ -38,7 +38,7 @@ echo "
     $nombre
     </title>
 </head>
-    <body style='background-color:#CBAAAA''><br><br><br>
+    <body style='background-color:#96BDB7''><br><br><br>
 
         <center>
         <h1><b>$title</b></h1>
@@ -47,13 +47,13 @@ echo "
         <div class='sub1p1'>
             <h2>
             $subtema
-            </h2><br>
+            </h2><hr width=50%><br>
             <p>$info</p>
             </div>
         <div class='sub1p1'>
              <h2>
              $subtema2
-            </h2><br>
+            </h2><hr width=50%><br>
             <p>$info2</p>
             </div>
         </div>
@@ -65,16 +65,18 @@ echo "
 
     <style>
     .contenedorp1{
-    background-color: #CBAAAA;
-
+    background-color: #E3F1EF;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    grid-template-columns: auto auto;
     width: 80%;
     height: 80%;
+    display:grid;
 
 }
     .sub1p1{
-    background-color: #f2f2f2;
-    border-radius: 5em;
-    height:40%;
-    width:80%;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+    height:80%;
+    width:90%;
+
 }
+    </style>

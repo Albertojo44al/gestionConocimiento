@@ -58,9 +58,20 @@ $user = $_GET['user'];
 <html>
     <head>
         <title>Create courses</title>
-    </head>
-    <body>
         <link rel="stylesheet" href="cursos.css">
+    </head>
+    <style>
+      .t{
+    height: 50%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+    .t img{
+    width: 100%;
+    height: 20%;
+    }
+    </style>
+    <body>
+
         <center>
         <br><br><br><br>
         <h2>Create a new course</h2>
@@ -90,9 +101,9 @@ $user = $_GET['user'];
             <tr><td>
                 <div class='contenedorP'>
 
-                <div class='t'><img src='imagenes/image4.jpg'><input id='crear' type="submit" name="t1" value="template 1"/></div>
-                <div class='t'><img src='imagenes/image4.jpg'><input id='crear' type="submit" name="t2" value="template 2"/></div>
-                <div class='t'><img src='imagenes/image4.jpg'><input id='crear' type="submit" name="t3" value="template 3"/></div>
+                <div class='t'><img src='imagenes/plantilla1.JPG'><input id='crear' type="submit" name="t1" value="template 1"/></div>
+                <div class='t'><img src='imagenes/plantilla2.JPG'><input id='crear' type="submit" name="t2" value="template 2"/></div>
+                <div class='t'><img src='imagenes/plantilla3.JPG'><input id='crear' type="submit" name="t3" value="template 3"/></div>
 
                 </div>
                 </td>

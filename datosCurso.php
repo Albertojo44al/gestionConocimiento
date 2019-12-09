@@ -40,9 +40,9 @@ $temp = $_GET['plantilla'];
 
 if(isset($_POST['enviar'])){
     $title = $_POST['title'];
-    $subtema = $_POST['subtema'];
+    $subtema1 = $_POST['subtema'];
     $subtema2 = $_POST['subtema2'];
-    $info = $_POST['info'];
+    $info1 = $_POST['info'];
     $info2 = $_POST['info2'];
     $color= $_POST['color'];
 
@@ -69,7 +69,7 @@ if(isset($_POST['enviar'])){
     $codigoContenido = intval( "0" . rand(1,9) . rand(0,9) . rand(0,9) . rand(0,9) . rand(0,9) );
 
 
-    $sqlContenido = "INSERT INTO CONTENIDO (CODIGO_CONTENIDO,CODIGO_CURSOS, PLANTILLA) VALUES ($codigoContenido,$codigo,3);";
+    $sqlContenido = "INSERT INTO CONTENIDO (CODIGO_CONTENIDO,CODIGO_CURSOS, PLANTILLA,TITULO) VALUES ($codigoContenido,$codigo,$temp,'$title');";
     $queryContenido = ibase_query($con,$sqlContenido);
       if(!$queryContenido){
         echo "<script> alert('error'); </script>";
@@ -77,25 +77,43 @@ if(isset($_POST['enviar'])){
     }
 
 
-        //envia los datos extraidos a la plantilla
+    //insertar datos en subtemas
+     $sqlSub2 = "INSERT INTO SUBTEMAS (CODIGO_CONTENIDO,SUBTEMA,INFORMACION) VALUES ($codigoContenido,'$subtema2','$info2');";
+    $querySub2 = ibase_query($con,$sqlSub2);
+    if(!$querySub2){
+        echo "<script> alert('error'); </script>";
+        exit;
+    }
+
+
+    $sqlSub = "INSERT INTO SUBTEMAS (CODIGO_CONTENIDO,SUBTEMA,INFORMACION) VALUES ($codigoContenido,'$subtema1','$info1');";
+    $querySub = ibase_query($con,$sqlSub);
+    if(!$querySub){
+        echo "<script> alert('error'); </script>";
+        exit;
+    }
+
+
+
+
+        //envia los datos extraidos a las plantillas
     if($temp ==1){
-        echo '
-        <script type="text/javascript">
-        window.location.href="plantilla1.php";
-        </script>';
+        echo "
+        <script type='text/javascript'>
+        window.location.href='plantilla1.php?nav=$nav&&user=$user&&codigo=$codigo&&color=$color';
+        </script>";
     }
     else  if($temp ==2){
-        echo '<script type="text/javascript">
-        window.location.href="plantilla2.php";
-        </script>';
+        echo "<script type='text/javascript'>
+        window.location.href='plantilla2.php?nav=$nav&&user=$user&&codigo=$codigo&&color=$color';
+        </script>";
     }else{
-        echo '<script type="text/javascript">
-        window.location.href="plantilla3.php";
-        </script>';
+        echo "<script type='text/javascrip'>
+        window.location.href='plantilla3.php?nav=$nav&&user=$user&&codigo=$codigo&&color=$color';
+        </script>";
     }
 
 }
-
 
 
 ?>
@@ -105,7 +123,6 @@ if(isset($_POST['enviar'])){
 <head><title>
     Template 1
     </title>
-
 </head>
     <body>
         <link rel="stylesheet" href="signUp.css">
@@ -121,7 +138,7 @@ if(isset($_POST['enviar'])){
         Information<br>
         <textarea name="info" rows="10" cols="60"> ...</textarea><br><br>
         Subtopic 2<br>
-        <input name="subtem2" type="text" size=35 style="font-size:18px"><br><br>
+        <input name="subtema2" type="text" size=35 style="font-size:18px"><br><br>
         Information<br>
         <textarea name="info2" rows="10" cols="60"> ...</textarea><br><br>
         <input id='crear' type="submit" name="enviar" value="create">
