@@ -10,10 +10,10 @@
             </div>
             <div class='collapse navbar-collapse' id='myNavbar'>
                 <ul class='nav navbar-nav'>
-                    <li><a href='cursos.php?nav=$nav&&user=$user'>Courses</a></li>
+                    <li class='active'><a href='cursos.php?nav=$nav&&user=$user'>Courses</a></li>
                     <li><a href='#?nav=$nav&&user=$user'>Categories</a></li>";
                 if($nav==2 || $nav==3){
-                 echo " <li class='active'><a href='crear.php?nav=$nav&&user=$user'>Create</a></li>
+                 echo " <li><a href='crear.php?nav=$nav&&user=$user'>Create</a></li>
                         <li><a href='myCourses.php?nav=$nav&&user=$user'>My courses</a></li>";
                     if($nav==3){
                     echo "<li><a href='users.php?nav=$nav&&user=$user'>Users</a></li>";

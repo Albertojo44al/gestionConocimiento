@@ -84,7 +84,7 @@ $user = $_GET['user'];
 	    <br>
 
             <?
-            $sql= "SELECT C.CODIGO,C.FECHA_CREACION,C.NOMBRE_CURSO,C.ACTIVO FROM CURSOS C
+            $sql= "SELECT C.CODIGO,C.FECHA_CREACION,C.NOMBRE_CURSO,C.ACTIVO, CON.PLANTILLA        FROM CONTENIDO CON INNER JOIN CURSOS  C ON CON.CODIGO_CURSOS=C.CODIGO
                    INNER JOIN CURSOS_X_USUARIOS CU ON Cu.CODIGO=C.CODIGO
                    WHERE CU.USUARIO = '$user'
                    ORDER BY C.FECHA_CREACION ASC;";
@@ -114,8 +114,18 @@ $user = $_GET['user'];
                      <td align=center> $row->NOMBRE_CURSO</td>
                      <td align=center> $row->FECHA_CREACION </td>
                      <td align=center><div class='el'><a href='eliminarCurso.php?user=$user&&nav=$nav&&codigo=$row->CODIGO'>   Delete</a></div>
-                     </td>
+                     <div class='btn'>";
+                    if($row->PLANTILLA == 1){
+                        echo "<a href='plantilla1.php?nav=$nav&&user=$user&&codigo=$row->CODIGO'> See </a>";
+                    }else if($row->PLANTILLA ==2){
+                        echo "<a href='plantilla2.php?nav=$nav&&user=$user&&codigo=$row->CODIGO'> See </a>";
+                    }else if($row->PLANTILLA ==3){
+                       echo "<a href='plantilla3.php?nav=$nav&&user=$user&&codigo=$row->CODIGO'> See </a>";
+                    }
 
+                    echo "</div>
+                    <div class='btn'><a href=''> Modify </a> </div>
+                     </td>
                      </tr>\n";
                 }
             }
