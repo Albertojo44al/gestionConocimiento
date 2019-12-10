@@ -69,12 +69,14 @@ echo "
 ?>
 
     <style>
-
+         body{
+            padding: 3%;
+        }
     .contenedorp1{
     background-color: #CBAAAA;
 
-    width: 80%;
-    height: 80%;
+    width: 90%;
+    height: 90%;
 
 }
     .sub1p1{

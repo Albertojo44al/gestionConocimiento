@@ -75,11 +75,14 @@ echo "
 ?>
 
     <style>
+      body{
+            padding: 3%;
+        }
     .contenedorp1{
     background-color: #f2f2f2;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     grid-template-columns: auto auto;
-    width: 80%;
+    width: 90%;
     height: 80%;
     display:grid;
     padding: 5%;
@@ -87,7 +90,7 @@ echo "
     .sub1p1{
     border-radius: 5em;
     height:80%;
-    width:90%;
+    width:95%;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
     .eliminar a{

@@ -17,7 +17,7 @@ $user = $_GET['user'];
                     <li><a href='cursos.php?nav=$nav&&user=$user'>Courses</a></li>
                     <li><a href='#?nav=$nav&&user=$user'>Categories</a></li>";
                 if($nav==2 || $nav==3){
-                 echo " <li><a href='create.php?nav=$nav&&user=$user'>Create</a></li>
+                 echo " <li><a href='crear.php?nav=$nav&&user=$user'>Create</a></li>
                         <li><a href='myCourses.php?nav=$nav&&user=$user'>My courses</a></li>";
                     if($nav==3){
                     echo "<li><a href='users.php?nav=$nav&&user=$user'>Users</a></li>";
@@ -45,6 +45,9 @@ else
     $codigo = "Administrator";
 echo "<body>
         <br><br><br><br><br>
+         <div align='right' class='edit'>
+        <a href='editarPerfil.php'>Edit Profile</a>
+        </div>
     <div class='contenedor1'>
             <div class='info'>
             <img src='imagenes/user.png'>
@@ -65,6 +68,9 @@ echo "<body>
 <html>
 <head>
     <style>
+        body{
+            padding: 3%;
+        }
     .contenedor1{
     width: 80%;
     height: 50%;
@@ -99,6 +105,17 @@ echo "<body>
    font-family: sans-serif;
 }
 
+    .edit a{
+    text-decoration: none;
+    color:white;
+    background:#2CB1C3;
+    padding: 10px 12px;
+    border-radius: 5px;
+}
+    .edit a:hover{
+    background :#05787C;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
     </style>
     <title>Profile </title>
     <meta charset="UTF-8"></head>
