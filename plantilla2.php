@@ -40,8 +40,14 @@ echo "
 </head>
     <body style='background-color:#CBAAAA''><br><br><br>
 
+
+        <h1><center><b>$title</b></center></h1>
+
+        <div align='right' class='eliminar'>
+        <a href='eliminarCurso.php?codigo=$codigoCurso&&user=$user&&nav=$nav'>Delete Course</a>
+        </div>
+
         <center>
-        <h1><b>$title</b></h1>
         <hr width=50%>
         <div class='contenedorp1'>
         <div class='sub1p1'>
@@ -78,3 +84,15 @@ echo "
     width:80%;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
+            .eliminar a{
+    text-decoration: none;
+    color:white;
+    background: darkred;
+    padding: 10px 12px;
+    border-radius: 5px;
+}
+    .eliminar a:hover{
+    background :#C71313;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+    </style>

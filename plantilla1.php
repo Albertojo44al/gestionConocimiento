@@ -40,8 +40,16 @@ echo "
 </head>
     <body style='background-color:#2cb1c3''><br><br><br>
 
-        <center>
-        <h1><b>$title</b></h1>
+
+
+
+        <h1><center><b>$title</b></center></h1>
+
+        <div align='right' class='eliminar'>
+        <a href='eliminarCurso.php?codigo=$codigoCurso&&user=$user&&nav=$nav'>Delete Course</a>
+        </div>
+
+         <center>
         <hr width=50%>
         <div class='contenedorp1'>
         <div class='sub1p1'>
@@ -56,8 +64,14 @@ echo "
             </h2><br>
             <p>$info2</p>
             </div>
+
         </div>
         </center>
+
+        <div class='modificar'>
+
+        </div>
+
     </body>
 </html>";
 #?nav=3%20&&user=admin&&codigo=73969&&color=#2cb1c3
@@ -77,6 +91,18 @@ echo "
     border-radius: 5em;
     height:80%;
     width:90%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+    .eliminar a{
+    text-decoration: none;
+    color:white;
+    background: darkred;
+    padding: 10px 12px;
+    border-radius: 5px;
+    text-align: right;
+}
+    .eliminar a:hover{
+    background :#C71313;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
     </style>

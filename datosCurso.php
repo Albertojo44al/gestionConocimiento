@@ -97,18 +97,19 @@ if(isset($_POST['enviar'])){
 
 
         //envia los datos extraidos a las plantillas
-    if($temp ==1){
+    if($temp==1){
         echo "
         <script type='text/javascript'>
         window.location.href='plantilla1.php?nav=$nav&&user=$user&&codigo=$codigo&&color=$color';
         </script>";
     }
-    else  if($temp ==2){
+    else  if($temp==2){
         echo "<script type='text/javascript'>
         window.location.href='plantilla2.php?nav=$nav&&user=$user&&codigo=$codigo&&color=$color';
         </script>";
-    }else{
-        echo "<script type='text/javascrip'>
+    }
+    else if($temp==3){
+       echo "<script type='text/javascript'>
         window.location.href='plantilla3.php?nav=$nav&&user=$user&&codigo=$codigo&&color=$color';
         </script>";
     }
@@ -121,7 +122,7 @@ if(isset($_POST['enviar'])){
 
 <html>
 <head><title>
-    Template 1
+    Cursos
     </title>
 </head>
     <body>
