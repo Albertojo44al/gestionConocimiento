@@ -22,7 +22,7 @@ $temp = $_GET['plantilla'];
                     <li><a href='#?nav=$nav&&user=$user'>Categories</a></li>";
                 if($nav==2 || $nav==3){
                  echo " <li class='active'><a href='crear.php?nav=$nav&&user=$user'>Create</a></li>
-                        <li><a href='#?nav=$nav&&user=$user'>My courses</a></li>";
+                        <li><a href='myCourses.php?nav=$nav&&user=$user'>My courses</a></li>";
                     if($nav==3){
                     echo "<li><a href='users.php?nav=$nav&&user=$user'>Users</a></li>";
                     }
@@ -100,17 +100,17 @@ if(isset($_POST['enviar'])){
     if($temp==1){
         echo "
         <script type='text/javascript'>
-        window.location.href='plantilla1.php?nav=$nav&&user=$user&&codigo=$codigo&&color=$color';
+        window.location.href='plantilla1.php?nav=$nav&&user=$user&&codigo=$codigo';
         </script>";
     }
     else  if($temp==2){
         echo "<script type='text/javascript'>
-        window.location.href='plantilla2.php?nav=$nav&&user=$user&&codigo=$codigo&&color=$color';
+        window.location.href='plantilla2.php?nav=$nav&&user=$user&&codigo=$codigo';
         </script>";
     }
     else if($temp==3){
        echo "<script type='text/javascript'>
-        window.location.href='plantilla3.php?nav=$nav&&user=$user&&codigo=$codigo&&color=$color';
+        window.location.href='plantilla3.php?nav=$nav&&user=$user&&codigo=$codigo';
         </script>";
     }
 
@@ -133,7 +133,6 @@ if(isset($_POST['enviar'])){
         <form method="POST">
         Title <br>
         <input name="title" type="text" size=35 style="font-size:18px"><br><br>
-        Background color:  <input type="color" name="color" value="#2CB1C3"><br><br>
         Subtopic 1<br>
         <input name="subtema" type="text" size=35 style="font-size:18px"><br><br>
         Information<br>

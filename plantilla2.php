@@ -4,7 +4,6 @@ include('bootstrap.php');
 include('navBarPlantillas.php');
 $nav = $_GET['nav'];
 $user = $_GET['user'];
-$color = $_GET['color'];
 
 
 
@@ -38,7 +37,7 @@ echo "
     $nombre
     </title>
 </head>
-    <body style='background-color:#CBAAAA''><br><br><br>
+    <body style='background-color:#CBAAAA'><br><br><br>
 
 
         <h1><center><b>$title</b></center></h1>
@@ -46,6 +45,7 @@ echo "
         <div align='right' class='eliminar'>
         <a href='eliminarCurso.php?codigo=$codigoCurso&&user=$user&&nav=$nav'>Delete Course</a>
         </div>
+
 
         <center>
         <hr width=50%>
@@ -66,10 +66,10 @@ echo "
         </center>
     </body>
 </html>";
-#?nav=3%20&&user=admin&&codigo=73969&&color=#2cb1c3
 ?>
 
     <style>
+
     .contenedorp1{
     background-color: #CBAAAA;
 

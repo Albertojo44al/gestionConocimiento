@@ -4,7 +4,6 @@ include('bootstrap.php');
 include('navBarPlantillas.php');
 $nav = $_GET['nav'];
 $user = $_GET['user'];
-$color = $_GET['color'];
 
 
 
@@ -38,7 +37,7 @@ echo "
     $nombre
     </title>
 </head>
-    <body style='background-color:#96BDB7''><br><br><br>
+    <body style='background-color:#96BDB7'><br><br><br>
 
 
         <h1><center><b>$title</b></center></h1>

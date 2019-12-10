@@ -18,7 +18,7 @@ $user = $_GET['user'];
                     <li><a href='#?nav=$nav&&user=$user'>Categories</a></li>";
                 if($nav==2 || $nav==3){
                  echo " <li class='active'><a href='crear.php?nav=$nav&&user=$user'>Create</a></li>
-                        <li><a href='#?nav=$nav&&user=$user'>My courses</a></li>";
+                        <li><a href='myCourses.php?nav=$nav&&user=$user'>My courses</a></li>";
                     if($nav==3){
                     echo "<li><a href='users.php?nav=$nav&&user=$user'>Users</a></li>";
                     }
