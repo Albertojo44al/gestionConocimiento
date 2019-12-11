@@ -46,7 +46,7 @@ else
 echo "<body>
         <br><br><br><br><br>
          <div align='right' class='edit'>
-        <a href='editarPerfil.php'>Edit Profile</a>
+        <a href='editarPerfil.php?nav=$nav&&user=$user&&pss=$datos->CONTRASENA'>Change password</a>
         </div>
     <div class='contenedor1'>
             <div class='info'>

@@ -82,7 +82,7 @@ $user = $_GET['user'];
             <?
             $sql= "SELECT USUARIO, NOMBRE_COMPLETO,CODIGO_ROL,ACTIVO FROM USUARIOS U ORDER BY U.NOMBRE_COMPLETO ASC";
             $query=ibase_query($con,$sql);
-            if(!res){
+            if(!query){
                 echo 'Error !!';
                 exit;
             }
