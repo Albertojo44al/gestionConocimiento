@@ -47,6 +47,8 @@ $user = $_GET['user'];
          <h1><b>Current Courses</b></h1>
         <hr width=50%>
         <br><br><br><br>
+
+
      <div class="contenedor">
     <div class="d1"><a href=""><img src="imagenes/image4.jpg"><p>Curso 1</p></a></div>
     <div class="d1"><a href=""><img src="imagenes/image2.jpg"><p>Curso 2</p></a></div>
