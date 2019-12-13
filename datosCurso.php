@@ -47,46 +47,57 @@ if(isset($_POST['enviar'])){
     $color= $_POST['color'];
 
 
-    $codigo = intval( "0" . rand(1,9) . rand(0,9) . rand(0,9) . rand(0,9) . rand(0,9) );
+    #$codigo = intval( "0" . rand(1,9) . rand(0,9) . rand(0,9) . rand(0,9) . rand(0,9) );
+
+
 
 
     //insertar datos en la tabala de cursos
-    $sqlCursos = "INSERT INTO CURSOS (CODIGO, FECHA_CREACION,CODIGO_CATEGORIAS,ACTIVO,NOMBRE_CURSO) VALUES ($codigo,CURRENT_DATE,$category,'A','$name');";
+    $sqlCursos = "INSERT INTO CURSOS (CODIGO, FECHA_CREACION,CODIGO_CATEGORIAS,ACTIVO,NOMBRE_CURSO) VALUES (gen_id(CODIGO_CURSO, 1) ,CURRENT_DATE,$category,'A','$name');";
     $queryCursos = ibase_query($con,$sqlCursos);
      if(!$queryCursos){
-        echo "<script> alert('error'); </script>";
+        echo "<script> alert('error Cursos'); </script>";
         exit;
     }
     //insertar datos en la tabla cursos_x_usuarios
-    $sqlCxU = "INSERT INTO CURSOS_X_USUARIOS(USUARIO,CODIGO) VALUES ('$user',$codigo);";
+    $sqlCxU = "INSERT INTO CURSOS_X_USUARIOS VALUES ('$user',gen_id(CODIGO_CURSO, 0));";
     $queryCxU = ibase_query($con,$sqlCxU);
     if(!$queryCursos){
-        echo "<script> alert('error'); </script>";
+        echo "<script> alert('error CursosxUsuarios'); </script>";
         exit;
     }
 
+    $sqlCodigo = 'select gen_id(CODIGO_CURSO, 0) as CODIGO from RDB$DATABASE;';
+    $queryCodigo = ibase_query($con,$sqlCodigo);
+    if(!$queryCodigo){
+        echo "<script> alert('error Codigo'); </script>";
+        exit;
+    }
+
+    $codigo1 = ibase_fetch_object($queryCodigo);
+
+
+
     //insertar datos en la tabla contenido
-    $codigoContenido = intval( "0" . rand(1,9) . rand(0,9) . rand(0,9) . rand(0,9) . rand(0,9) );
 
-
-    $sqlContenido = "INSERT INTO CONTENIDO (CODIGO_CONTENIDO,CODIGO_CURSOS, PLANTILLA,TITULO) VALUES ($codigoContenido,$codigo,$temp,'$title');";
+    $sqlContenido = "INSERT INTO CONTENIDO (CODIGO_CONTENIDO,CODIGO_CURSOS, PLANTILLA,TITULO) VALUES (gen_id(CODIGO_CONTENIDO, 1),gen_id(CODIGO_CURSO, 0),$temp,'$title');";
     $queryContenido = ibase_query($con,$sqlContenido);
       if(!$queryContenido){
-        echo "<script> alert('error'); </script>";
+        echo "<script> alert('error conetenido'); </script>";
         exit;
     }
 
 
     //insertar datos en subtemas
-     $sqlSub2 = "INSERT INTO SUBTEMAS (CODIGO_CONTENIDO,SUBTEMA,INFORMACION) VALUES ($codigoContenido,'$subtema2','$info2');";
+     $sqlSub2 = "INSERT INTO SUBTEMAS (CODIGO_CONTENIDO,SUBTEMA,INFORMACION) VALUES (gen_id(CODIGO_CONTENIDO, 0),'$subtema2','$info2');";
     $querySub2 = ibase_query($con,$sqlSub2);
     if(!$querySub2){
-        echo "<script> alert('error'); </script>";
+        echo "<script> alert('error subtemas'); </script>";
         exit;
     }
 
 
-    $sqlSub = "INSERT INTO SUBTEMAS (CODIGO_CONTENIDO,SUBTEMA,INFORMACION) VALUES ($codigoContenido,'$subtema1','$info1');";
+    $sqlSub = "INSERT INTO SUBTEMAS (CODIGO_CONTENIDO,SUBTEMA,INFORMACION) VALUES (gen_id(CODIGO_CONTENIDO, 0),'$subtema1','$info1');";
     $querySub = ibase_query($con,$sqlSub);
     if(!$querySub){
         echo "<script> alert('error'); </script>";
@@ -100,17 +111,17 @@ if(isset($_POST['enviar'])){
     if($temp==1){
         echo "
         <script type='text/javascript'>
-        window.location.href='plantilla1.php?nav=$nav&&user=$user&&codigo=$codigo';
+        window.location.href='plantilla1.php?nav=$nav&&user=$user&&codigo=$codigo1->CODIGO';
         </script>";
     }
     else  if($temp==2){
         echo "<script type='text/javascript'>
-        window.location.href='plantilla2.php?nav=$nav&&user=$user&&codigo=$codigo';
+        window.location.href='plantilla2.php?nav=$nav&&user=$user&&codigo=$codigo1->CODIGO';
         </script>";
     }
     else if($temp==3){
        echo "<script type='text/javascript'>
-        window.location.href='plantilla3.php?nav=$nav&&user=$user&&codigo=$codigo';
+        window.location.href='plantilla3.php?nav=$nav&&user=$user&&codigo=$codigo1->CODIGO';
         </script>";
     }
 
