@@ -74,7 +74,7 @@ if(isset($_POST['enviar'])){
         exit;
     }
 
-    $codigo1 = ibase_fetch_object($queryCodigo);
+    $codigo = ibase_fetch_object($queryCodigo);
 
 
 
@@ -111,17 +111,17 @@ if(isset($_POST['enviar'])){
     if($temp==1){
         echo "
         <script type='text/javascript'>
-        window.location.href='plantilla1.php?nav=$nav&&user=$user&&codigo=$codigo1->CODIGO';
+        window.location.href='plantilla1.php?nav=$nav&&user=$user&&codigo=$codigo->CODIGO';
         </script>";
     }
     else  if($temp==2){
         echo "<script type='text/javascript'>
-        window.location.href='plantilla2.php?nav=$nav&&user=$user&&codigo=$codigo1->CODIGO';
+        window.location.href='plantilla2.php?nav=$nav&&user=$user&&codigo=$codigo->CODIGO';
         </script>";
     }
     else if($temp==3){
        echo "<script type='text/javascript'>
-        window.location.href='plantilla3.php?nav=$nav&&user=$user&&codigo=$codigo1->CODIGO';
+        window.location.href='plantilla3.php?nav=$nav&&user=$user&&codigo=$codigo->CODIGO';
         </script>";
     }
 
