@@ -44,12 +44,6 @@ if(isset($_POST['enviar'])){
     $subtema2 = $_POST['subtema2'];
     $info1 = $_POST['info'];
     $info2 = $_POST['info2'];
-    $color= $_POST['color'];
-
-
-    #$codigo = intval( "0" . rand(1,9) . rand(0,9) . rand(0,9) . rand(0,9) . rand(0,9) );
-
-
 
 
     //insertar datos en la tabala de cursos

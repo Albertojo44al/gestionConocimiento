@@ -124,7 +124,7 @@ $user = $_GET['user'];
                     }
 
                     echo "</div>
-                    <div class='btn'><a href=''> Modify </a> </div>
+                    <div class='btn'><a href='modificarCurso.php?user=$user&&nav=$nav&&codigo=$row->CODIGO'> Modify </a> </div>
                      </td>
                      </tr>\n";
                 }

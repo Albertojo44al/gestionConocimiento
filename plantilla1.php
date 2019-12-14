@@ -47,7 +47,7 @@ echo "
         <a href='eliminarCurso.php?codigo=$codigoCurso&&user=$user&&nav=$nav'>Delete Course</a><br><br>
         </div>
         <div align='right' class='modificar'>
-        <a href='eliminarCurso.php?codigo=$codigoCurso&&user=$user&&nav=$nav'>Modify Course</a>
+        <a href='modificarCurso.php?codigo=$codigoCurso&&user=$user&&nav=$nav'>Modify Course</a>
         </div>";
     }
             echo "

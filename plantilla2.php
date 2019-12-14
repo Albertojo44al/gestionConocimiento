@@ -10,7 +10,7 @@ $user = $_GET['user'];
 
 $codigoCurso = $_GET['codigo'];
 
-$sql = "SELECT USUARIO,INFORMACION, NOMBRE_CURSO, TITULO FROM CURSOS_X_USUARIOS cxc inner join CURSOS C on cxc.CODIGO = c.CODIGO inner join CONTENIDO CON ON CON.CODIGO_CURSOS=C.CODIGO INNER JOIN SUBTEMAS SUB ON
+$sql = "SELECT SUBTEMA,USUARIO,INFORMACION, NOMBRE_CURSO, TITULO FROM CURSOS_X_USUARIOS cxc inner join CURSOS C on cxc.CODIGO = c.CODIGO inner join CONTENIDO CON ON CON.CODIGO_CURSOS=C.CODIGO INNER JOIN SUBTEMAS SUB ON
 SUB.CODIGO_CONTENIDO = CON.CODIGO_CONTENIDO WHERE C.CODIGO = $codigoCurso;";
 $query = ibase_query($con,$sql);
 
@@ -41,17 +41,17 @@ echo "
     <body style='background-color:#CBAAAA'><br><br><br>
 
 
-        <h1><center><b>$title</b></center></h1>";
+        <h1><center><b
+        >$title</b></center></h1>";
     if($creador == $user || $nav==1){
         echo "<div align='right' class='eliminar'>
         <a href='eliminarCurso.php?codigo=$codigoCurso&&user=$user&&nav=$nav'>Delete Course</a><br><br>
         </div>
         <div align='right' class='modificar'>
-        <a href='eliminarCurso.php?codigo=$codigoCurso&&user=$user&&nav=$nav'>Modify Course</a>
+        <a href='modificarCurso.php?codigo=$codigoCurso&&user=$user&&nav=$nav'>Modify Course</a>
         </div>";
     }
         echo "
-
         <center>
         <hr width=50%>
         <div class='contenedorp1'>
