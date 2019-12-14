@@ -43,7 +43,7 @@ echo "
 
         <h1><center><b
         >$title</b></center></h1>";
-    if($creador == $user || $nav==1){
+    if($creador == $user || $nav==3){
         echo "<div align='right' class='eliminar'>
         <a href='eliminarCurso.php?codigo=$codigoCurso&&user=$user&&nav=$nav'>Delete Course</a><br><br>
         </div>
