@@ -101,9 +101,9 @@ $user = $_GET['user'];
             <tr><td>
                 <div class='contenedorP'>
 
-                <div class='t'><img src='imagenes/plantilla1.JPG'><input id='crear' type="submit" name="t1" value="template 1"/></div>
-                <div class='t'><img src='imagenes/plantilla2.JPG'><input id='crear' type="submit" name="t2" value="template 2"/></div>
-                <div class='t'><img src='imagenes/plantilla3.JPG'><input id='crear' type="submit" name="t3" value="template 3"/></div>
+                <div class='t'><img src='imagenes/plant1.JPG'><input id='crear' type="submit" name="t1" value="template 1"/></div>
+                <div class='t'><img src='imagenes/plant2.JPG'><input id='crear' type="submit" name="t2" value="template 2"/></div>
+                <div class='t'><img src='imagenes/plant3.JPG'><input id='crear' type="submit" name="t3" value="template 3"/></div>
 
                 </div>
                 </td>

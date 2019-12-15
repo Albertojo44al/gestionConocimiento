@@ -36,7 +36,7 @@ echo "
     $nombre
     </title>
 </head>
-    <body style='background-color:#2cb1c3'><br><br><br>
+    <body style='background-color:#474343'><br><br><br>
 
 
 
@@ -57,13 +57,13 @@ echo "
         <div class='contenedorp1'>
         <div class='sub1p1'>
             <h2>
-            $subtema
+            $subtema2
             </h2><br>
             <p>$info</p>
             </div>
         <div class='sub1p1'>
              <h2>
-             $subtema2
+             $subtema
             </h2><br>
             <p>$info2</p>
             </div>
@@ -71,10 +71,7 @@ echo "
         </div>
         </center>
 
-        <div class='modificar'>
-
-        </div>
-
+<p id='autor'>author:   $creador </p>
     </body>
 </html>";
 
@@ -85,8 +82,8 @@ echo "
             padding: 3%;
         }
     .contenedorp1{
-    background-color: #f2f2f2;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+
     grid-template-columns: auto auto;
     width: 90%;
     height: 80%;
@@ -94,8 +91,10 @@ echo "
     padding: 5%;
 }
     .sub1p1{
+        font-family: fantasy;
+        background-color: #f2f2f2;
     border-radius: 5em;
-    height:80%;
+    height:100%;
     width:95%;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
@@ -123,4 +122,10 @@ echo "
     background :#0FB5DD;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
+    #autor{
+    color: whitesmoke;
+}
+        h1{
+            color:whitesmoke;
+        }
     </style>

@@ -84,12 +84,13 @@ if($contador ==1){
  else if($contador < 4){
  echo " <style>.d1{
         width: 100%;
-        height: 40%;
+        height: 35%;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
         }
         </style>";
  }else{
      echo " <style>.d1{
+        height: 70%;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
         }
         </style>";
@@ -101,7 +102,7 @@ if($contador ==1){
     .contenedor{
     grid-template-columns: auto auto auto;
     width: 80%;
-    height: 80%;
+    height: 100%;
     justify-content:space-between;
     display:grid;
     grid-row-gap: 10%;

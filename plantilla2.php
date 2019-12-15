@@ -38,7 +38,7 @@ echo "
     $nombre
     </title>
 </head>
-    <body style='background-color:#CBAAAA'><br><br><br>
+    <body background='imagenes/fonodo1.jpg'><br><br><br>
 
 
         <h1><center><b
@@ -53,22 +53,24 @@ echo "
     }
         echo "
         <center>
-        <hr width=50%>
+        <hr width=50%><br><br>
         <div class='contenedorp1'>
         <div class='sub1p1'>
             <h2>
-            $subtema
+            $subtema2
             </h2><br>
             <p>$info</p>
             </div>
         <div class='sub1p1'>
              <h2>
-             $subtema2
+             $subtema
             </h2><br>
             <p>$info2</p>
             </div>
         </div>
         </center>
+
+        <p id='autor'>author:   $creador </p>
     </body>
 </html>";
 ?>
@@ -78,7 +80,7 @@ echo "
             padding: 3%;
         }
     .contenedorp1{
-    background-color: #CBAAAA;
+
 
     width: 90%;
     height: 90%;
@@ -118,4 +120,9 @@ echo "
     background :#0FB5DD;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
+    #autor{
+
+    font-size: 20px;
+}
+
     </style>
