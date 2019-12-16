@@ -43,14 +43,14 @@ if (isset($_POST["btn1"]))
 
 <html>
 
-<title>Nuevo Usuario</title>
+<title>New User</title>
 
 <body>
 <link rel="stylesheet" href="signUp.css">
 <center>
     <br><br><br><br>
 
-    <h2>REGISTRAR NUEVO USUARIO  <img src="imagenes/logoB.png" width="5%" height="7%">
+    <h2>NEW USER  <img src="imagenes/logoB.png" width="5%" height="7%">
 	<hr width=50%></h2>
      <div class="contenedor">
 	<form name="fe" action="" method="POST">

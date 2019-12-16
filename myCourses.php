@@ -15,7 +15,7 @@ $user = $_GET['user'];
             <div class='collapse navbar-collapse' id='myNavbar'>
                 <ul class='nav navbar-nav'>
                     <li><a href='cursos.php?nav=$nav&&user=$user'>Courses</a></li>
-                    <li><a href='#?nav=$nav&&user=$user'>Categories</a></li>";
+                    <li><a href='categorias.php?nav=$nav&&user=$user'>Categories</a></li>";
                 if($nav==2 || $nav==3){
                  echo " <li><a href='crear.php?nav=$nav&&user=$user'>Create</a></li>
                         <li class='active' ><a href='myCourses.php?nav=$nav&&user=$user'>My courses</a></li>";
