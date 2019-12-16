@@ -284,7 +284,7 @@ $user = $_GET['user'];
 
                 }
             }
-            echo "</table>\n";
+            echo "</table>\n <br><br><br>";
             ?>
 
         </center>

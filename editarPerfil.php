@@ -34,12 +34,21 @@ $user = $_GET['user'];
     <center>";
 
 
+$sqlPass = "SELECT CONTRASENA FROM USUARIOS WHERE USUARIO = '$user';";
+$queryPass = ibase_query($con,$sqlPass);
+if(!$queryPass){
+    echo "<script> alert('Error!'); </script>";
+    exit;
+}
+$object = ibase_fetch_object($queryPass);
+
+
 if (isset($_POST["btn1"]))
 {
     $cpass = $_POST['cpass'];
     $newpass = $_POST['newpass'];
     $newpass2 = $_POST['newpass2'];
-    if($newpass != $newpass2 || $cpass != $_GET['pss']){
+    if($newpass != $newpass2 || $cpass != $object->CONTRASENA){
         echo "<script> alert('Password do not match!'); </script>";
     }else{
         $sql = "UPDATE USUARIOS SET CONTRASENA = '$newpass' WHERE USUARIO = '$user'AND CONTRASENA ='$cpass';";

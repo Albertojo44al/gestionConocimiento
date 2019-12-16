@@ -75,10 +75,10 @@ echo "
         <input name='titulo' type='text' size=35 style='font-size:18px' value='$title'><br><br>
         <h2>$subtema2</h2><br>
         Information<br>
-        <textarea name='informacion1' rows='10' cols='60'>$info</textarea><br><br>
+        <textarea name='informacion1' rows='10' cols='60'>$info2</textarea><br><br>
         <h2>$subtema</h2><br>
         Information<br>
-        <textarea name='informacion2' rows='10' cols='60'>$info2</textarea><br><br>
+        <textarea name='informacion2' rows='10' cols='60'>$info</textarea><br><br>
         <input id='crear' type='submit' name='modificar' value='modify'>
 
         </form>
