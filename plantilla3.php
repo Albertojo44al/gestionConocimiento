@@ -56,13 +56,13 @@ echo "
             <h2>
             $subtema2
             </h2><hr width=50%><br>
-            <p>$info</p>
+            <p>$info2</p>
             </div>
         <div class='sub1p1'><br><br>
              <h2>
              $subtema
             </h2><hr width=50%><br>
-            <p>$info2</p>
+            <p>$info</p>
             </div>
         </div>
         </center><br>
