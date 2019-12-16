@@ -99,14 +99,14 @@ echo "
         exit;
 
         }
-        $sqlSubtema = "UPDATE SUBTEMAS SUB SET INFORMACION='$informacion1' WHERE SUB.SUBTEMA= '$subtema' AND SUB.CODIGO_CONTENIDO= $codigoContenido;";
+        $sqlSubtema = "UPDATE SUBTEMAS SUB SET INFORMACION='$informacion2' WHERE SUB.SUBTEMA= '$subtema' AND SUB.CODIGO_CONTENIDO= $codigoContenido;";
         $querySubtema = ibase_query($con,$sqlSubtema);
         if(!$querySubtema){
         echo "<script> alert('error Subtema1'); </script>";
         exit;
         }
 
-        $sqlSubtema2 = "UPDATE SUBTEMAS SUB SET INFORMACION='$informacion2' WHERE SUB.SUBTEMA= '$subtema2' AND SUB.CODIGO_CONTENIDO= $codigoContenido;";
+        $sqlSubtema2 = "UPDATE SUBTEMAS SUB SET INFORMACION='$informacion1' WHERE SUB.SUBTEMA= '$subtema2' AND SUB.CODIGO_CONTENIDO= $codigoContenido;";
         $querySubtema2 = ibase_query($con,$sqlSubtema2);
         if(!$querySubtema){
         echo "<script> alert('error Subtema2'); </script>";
